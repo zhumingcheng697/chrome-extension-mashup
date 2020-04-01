@@ -1,10 +1,3 @@
-// A2Z F17
-// Daniel Shiffman
-// http://shiffman.net/a2z
-// https://github.com/shiffman/A2Z-F17
-//
-// setInterval(changeEverything, 100);
-
 let myDriveHeader;
 let sideBarItems;
 let mainOwner;
@@ -75,9 +68,6 @@ function changeEverything() {
 
   for (const item of lastModifiedBy) {
     if (item.getAttribute("data-tooltip") && item.getAttribute("aria-label")) {
-      // item.setAttribute("data-tooltip", item.getAttribute("data-tooltip").replace(/^Last modified by .*$/g, "Last modified by NSA " + item.innerHTML.replace(/<div .*<\/div>/gi, "")));
-      // item.setAttribute("aria-label", item.getAttribute("aria-label").replace(/^Last modified by .*$/g, "Last modified by NSA " + item.innerHTML.replace(/<div .*<\/div>/gi, "")));
-
       item.setAttribute("data-tooltip", item.getAttribute("data-tooltip").replace(/^Last modified by .*$/g, "Last modified by NSA " + (item.innerHTML.startsWith("<span") || item.innerHTML.startsWith("<div") ? item.children[0].innerHTML.replace(/(<span.*<\/span>)|(<div.*<\/div>)/gi, "") : item.innerHTML.replace(/(<span.*<\/span>)|(<div.*<\/div>)/gi, ""))));
       item.setAttribute("aria-label", item.getAttribute("aria-label").replace(/^Last modified by .*$/g, "Last modified by NSA " + (item.innerHTML.startsWith("<span") || item.innerHTML.startsWith("<div") ? item.children[0].innerHTML.replace(/(<span.*<\/span>)|(<div.*<\/div>)/gi, "") : item.innerHTML.replace(/(<span.*<\/span>)|(<div.*<\/div>)/gi, ""))));
 
@@ -130,17 +120,6 @@ function changeEverything() {
     icon.removeAttribute("srcset");
     icon.parentNode.querySelector("span.gb_ae.gb_0c").innerHTML = "NSA Drive";
   }
-
-  // if (mainOwner && simpleOwner && activityOwner && activityModifiedOpened) {
-  //   setTimeout(function () {
-  //     document.body.innerHTML = document.body.innerHTML.replace(/"my drive"/gi, "\"NSA&#8217;s Drive\"");
-  //     document.body.innerHTML = document.body.innerHTML.replace(/>my drive</gi, ">NSA&#8217;s Drive<");
-  //     document.body.innerHTML = document.body.innerHTML.replace(/Google Drive/g, "NSA Drive");
-  //     document.body.innerHTML = document.body.innerHTML.replace(/"Items shared with me"/g, "\"Items shared with NSA\"");
-  //     document.body.innerHTML = document.body.innerHTML.replace(/>Shared with me</g, ">Shared with NSA<");
-  //   }, 5);
-  // }
-
 
   setTimeout(changeEverything, 50);
 }
