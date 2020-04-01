@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "NSA Drive",
+  "version": "1.0",
+  "description": "This extensions alters the content of a Google Drive page.",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://drive.google.com/*",
+        "https://drive.google.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
