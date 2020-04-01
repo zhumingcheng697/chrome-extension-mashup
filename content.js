@@ -18,6 +18,8 @@ function changeEverything() {
   title = title.replace(/Shared with me/gi, "Shared with NSA");
   window.document.title = title.replace(/My Drive/gi, "NSA’s Drive");
 
+  document.querySelector("link[rel=\"icon\"]").setAttribute("href", "https://www.nsa.gov/portals/68/images/footerNSASeal.png?ver=2018-07-05-144911-353");
+
   myDriveHeader = document.querySelectorAll("div.h-sb-Ic.h-R-w-d-ff, div.h-sb-Ic.h-w-d-ff, div.a-v-T, div.o-Yc-o-T, div.a-Mg-V-T, div.a-b-q-Dh-A.a-b-d");
   sideBarItems = document.querySelectorAll("div.h-sb-Ic.h-R-w-d-ff, span.a-s-T");
   mainOwner = document.querySelectorAll("span.rprYvc, div.a-t-cb-Ef-Ja.a-t-l-Dg span.a-s-Nc-Q");
